@@ -1,0 +1,5 @@
+<!-- splash.component.html -->
+<div class="splash" [@slideOutRight]="loading ? 'visible' : 'hidden'">
+  <span class="bold" [style]="'font-style: 40px'">{{title}}</span>
+  <mat-progress-spinner class="progress-bar" color="primary" diameter="30" strokeWidth="2" mode="indeterminate"></mat-progress-spinner>
+</div>

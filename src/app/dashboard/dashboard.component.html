@@ -1,0 +1,27 @@
+<div class="content-body">
+  <div class="location" (click)="changeLocation()">
+    <div class="label regular" style="font-size: 14px;">
+      <span>Location</span>
+    </div>
+    <div class="search-location">
+      <div class="input-container">
+        <mat-icon>location_on</mat-icon>
+        <input type="text" class="location-input bold" placeholder="your location" [value]="userLocation">
+        <mat-icon>arrow_drop_down</mat-icon>
+      </div>
+    </div>
+  </div>
+  <div class="search-bar">
+    <div class="search-container">
+      <mat-icon>search</mat-icon>
+      <input type="text" class="search-input bold" placeholder="your location" [value]="userLocation">
+    </div>
+    <div class="filter-icon">
+      <mat-icon >filter_list</mat-icon>
+    </div>
+
+  </div>
+  <div class="slider" *ngIf="true">
+    <app-slider [slides]="slides"></app-slider>
+  </div>
+</div>

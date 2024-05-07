@@ -1,0 +1,17 @@
+<div class="slider">
+  <div>
+    <div (click)="goToPrevious()" class="leftArrow">❰</div>
+    <div (click)="goToNext()" class="rightArrow">❱</div>
+  </div>
+  <div>
+    <div class="image-slider-label bold">{{getCurrentSlideLabel()}}</div>
+    <div class="image-slider-description thin">{{getCurrentSlideDescription()}}</div>
+    <div class="image-button" *ngIf="buttonEnable()"><p-button class="image-button-btn" label="Shop Now" [raised]="true" severity="help"></p-button></div>
+    <img class="slide" [src]="getCurrentSlideUrl()" [alt]="getCurrentSlideLabel()" />
+  </div>
+  <div class="dotsContainer">
+    <div *ngFor="let slide of slides; let slideIndex = index" class="dot" (click)="goToSlide(slideIndex)">
+      ●
+    </div>
+  </div>
+</div>

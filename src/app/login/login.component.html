@@ -1,0 +1,70 @@
+<div class="logo-text">
+  <img src="../../assets/text_logo.png" alt="logo">
+</div>
+<div class="login-container">
+
+  <div class="login-content">
+
+  <h1 class="title">Login</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
+
+      <p-floatLabel class="input">
+          <input  formControlName="email"  pInputText id="Email" class="input"/>
+          <label for="Email">Email</label>
+      </p-floatLabel>
+      <!-- <mat-error *ngIf="loginForm?.get('email')?.invalid && (loginForm?.get('email')?.dirty || loginForm?.get('email')?.touched)">
+        Please enter a valid email address
+      </mat-error> -->
+
+
+    <!-- <mat-form-field class="input" appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email" placeholder="Enter your email">
+      <mat-error *ngIf="loginForm?.get('email')?.invalid && (loginForm?.get('email')?.dirty || loginForm?.get('email')?.touched)">
+        Please enter a valid email address
+      </mat-error>
+    </mat-form-field> -->
+    <!-- <mat-form-field class="input" appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" type="password" placeholder="Enter your password"  (toggle)="true">
+
+
+      <mat-error *ngIf="loginForm?.get('password')?.invalid && (loginForm?.get('password')?.dirty || loginForm?.get('password')?.touched)">
+        Please enter a valid password
+      </mat-error>
+    </mat-form-field> -->
+    <!-- <p-password formControlName="password" [feedback]="true" class="ng-invalid ng-dirty" [toggleMask]="true">
+      <ng-template pTemplate="header">
+          <h6>Pick a password</h6>
+      </ng-template>
+      <ng-template pTemplate="footer">
+          <p-divider />
+          <p class="mt-2">Suggestions</p>
+          <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+              <li>At least one lowercase</li>
+              <li>At least one uppercase</li>
+              <li>At least one numeric</li>
+              <li>Minimum 8 characters</li>
+          </ul>
+      </ng-template>
+  </p-password> -->
+
+  <p-floatLabel>
+    <p-password formControlName="password" [feedback]="true" class="input ng-invalid ng-dirty" [toggleMask]="true" />
+    <label for="password">Password</label>
+  </p-floatLabel>
+
+    <div class="forgotpassword">
+      <span class="label semi-bold">Forgot password? <a href="/forgotpassword">click here</a></span>
+    </div>
+    <button class="button" mat-raised-button color="primary" type="submit" [disabled]="loginForm?.invalid">Login</button>
+    <div class="forgotpassword" style="margin-top: 10px;">
+      <span class="label semi-bold">Don't have an account? <a href="/signup">Create new</a></span>
+    </div>
+    <div class="google-button">
+      <img  src="../../assets/google.png" width="40px" alt="google logo" (click)="googleAuth()">
+    </div>
+  </form>
+
+</div>
+</div>

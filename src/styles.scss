@@ -1,0 +1,195 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$xclusive_mart-primary: mat.define-palette(mat.$indigo-palette);
+$xclusive_mart-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$xclusive_mart-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$xclusive_mart-theme: mat.define-light-theme((color: (primary: $xclusive_mart-primary,
+        accent: $xclusive_mart-accent,
+        warn: $xclusive_mart-warn,
+      )));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($xclusive_mart-theme);
+
+/* You can add global styles to this file, and also import other style files */
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@300;400;500;600;700&display=swap');
+
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+body {
+  font-family: 'Cabin', sans-serif;
+}
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Cabin', sans-serif;
+}
+
+/* Regular */
+.regular {
+  font-family: 'Cabin', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Bold */
+.bold {
+  font-family: 'Cabin', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Semi-Bold */
+.semibold {
+  font-family: 'Cabin', sans-serif;
+  font-weight: 600;
+  /* semi-bold weight */
+  font-style: normal;
+}
+
+/* Thin */
+.thin {
+  font-family: 'Cabin', sans-serif;
+  font-weight: 300;
+  /* thin weight */
+  font-style: normal;
+}
+
+//login signup
+
+.login-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100;
+  height: 100vh;
+
+  .login-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .input {
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  .button {
+    width: 100%;
+    display: flex;
+    height: 40px;
+  }
+
+  .forgotpassword {
+    font-size: 12px;
+    margin: auto;
+    margin-bottom: 10px;
+    align-items: end;
+    display: flex;
+    justify-content: end;
+  }
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  width: 80%;
+}
+
+.form {
+  width: 80%;
+  max-width: 400px;
+}
+
+.logo-text {
+  width: 80%;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  margin-top: 10px;
+  margin-left: 15px;
+  height: 0vh;
+}
+.logo-text-nav {
+  width: 50%;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+
+.custom-spinner{
+  --spinner-diameter: 120px;  // Set custom diameter
+  --spinner-stroke-width: 8px;
+  --spinner-color: red;
+}
+
+//slider
+.slider{
+  width: 97%;
+  height: 200px;
+  margin-top: 10px;
+  justify-content: center;
+  .image-slider-label{
+    position: absolute;
+    margin-top: 25px;
+    margin-left: 20px;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    // width: 50%;
+    text-transform: capitalize;
+    background: scroll;
+  }
+  .image-slider-description{
+    position: absolute;
+    margin-top: 55px;
+    margin-left: 20px;
+    width: 50%;
+    font-size: 15px;
+    color: rgb(54, 54, 54);
+    // text-transform: capitalize;
+  }
+  .image-button{
+    position: absolute;
+    margin-top: 110px;
+    margin-left: 20px;
+
+    .p-button.p-button-help {
+      height: 18px;
+      font-size: 10px;
+      // background-color: red;
+    }
+  }
+}

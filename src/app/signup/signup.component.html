@@ -1,0 +1,46 @@
+<div class="logo-text">
+  <img src="../../assets/text_logo.png" alt="logo">
+</div>
+<div class="login-container">
+  <div class="login-content">
+
+  <h1 class="title">Sign Up</h1>
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="form">
+    <mat-form-field class="input" appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email" placeholder="Enter your email">
+      <mat-error *ngIf="signupForm?.get('email')?.invalid && (signupForm?.get('email')?.dirty || signupForm?.get('email')?.touched)">
+        Please enter a valid email address
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="input" appearance="outline">
+      <mat-label>Phone</mat-label>
+      <span matTextPrefix>+91 &nbsp;</span>
+      <input type="tel" matInput placeholder="555-555-1234">
+      <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
+    <mat-form-field class="input" appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" type="password" placeholder="Enter your password">
+      <mat-error *ngIf="signupForm?.get('password')?.invalid && (signupForm?.get('password')?.dirty || signupForm?.get('password')?.touched)">
+        Please enter a valid password
+      </mat-error>
+    </mat-form-field>
+
+    <!-- <mat-form-field class="input" appearance="outline">
+
+      <mat-checkbox formControlName="agreeTerms">
+        I agree to the <a href="#">Terms & Conditions</a>
+      </mat-checkbox>
+    </mat-form-field> -->
+
+    <div class="forgotpassword">
+      <span class="label semi-bold">Already have a account? <a href="">Login</a></span>
+    </div>
+    <button class="button" mat-raised-button color="primary" type="submit" [disabled]="signupForm?.invalid">Submit</button>
+
+
+  </form>
+
+</div>
+</div>
